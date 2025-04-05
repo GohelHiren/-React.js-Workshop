@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function saveData() {
+            localStorage.setItem("name", "Hiren")
+            sessionStorage.setItem("name", "Hiren")
+            document.getElementById('myid').innerHTML = "Saved"
+        }
+        function getData() {
+            if (localStorage.getItem("name") != null) {
+                var a = localStorage.getItem("name")
+                document.getElementById('myid').innerHTML = "Date is " + a
+            } else {
+                document.getElementById("myid").innerHTML = "No Data"
+            }
+        }
+        function removeData() {
+            localStorage.removeItem("name")
+            document.getElementById('myid').innerHTML = "Removed"
+        }
+        function objectSave() {
+            var obj = {
+                name: "Hiren",
+                age: "23",
+                gender: "male"
+            }
+
+            mydata = JSON.stringify(obj)
+            localStorage.setItem("userdata", mydata)
+            document.getElementById('myid').innerHTML = "Saved Object"
+
+
+        }
+        function objectGet() {
+            if (localStorage.getItem('userdata') != null) {
+                var a = localStorage.getItem("userdata")
+                var myobj = JSON.parse(a)
+                document.getElementById('myid').innerHTML = "Name is " + myobj.name + " Gender is : "+ myobj.gender+ " Age is : " + myobj.age
+            } else {
+                document.getElementById("myid").innerHTML = "No Data"
+
+            }
+        }
+        function objectRemove() {
+            localStorage.removeItem("userdata")
+            document.getElementById('myid').innerHTML = "Removed Object"
+        }
+    </script>
+</head>
+
+<body>
+    <p id="myid"></p>
+    <input type="button" value="Save" onclick="saveData()">
+    <input type="button" value="Get" onclick="getData()">
+    <input type="button" value="Remove" onclick="removeData()">
+    <input type="button" value="Objsave" onclick="objectSave()">
+    <input type="button" value="objGet" onclick="objectGet()">
+    <input type="button" value="objRemove" onclick="objectRemove()">
+</body>
+
+</html>

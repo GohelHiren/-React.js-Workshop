@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+    <script>
+        let c = 0, ci = 0, sinc = localStorage.getItem("inc");
+        
+
+
+        function inc() {
+
+            if (sinc === null) {
+                c++;
+                var ans = demo.textContent = c;
+                localStorage.setItem("inc", ans)
+            } else {
+                sinc++;
+                var newans = demo.textContent = sinc;
+                localStorage.setItem("inc", newans)
+            }
+        }
+        function removeData() {
+            console.log("i am work");
+            localStorage.removeItem("inc");
+            demo.textContent = null;
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="demo"></h1>
+    <button onclick="inc()">Increment</button>
+    <button onclick="removeData()">clear old date</button>
+
+
+</body>
+
+</html>
