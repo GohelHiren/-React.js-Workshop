@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dosum() {
+            var n1 = document.getElementById('n1').value
+            var n2 = document.getElementById('n2').value
+            var ans = parseInt(n1) + parseInt(n2) 
+            document.getElementById('res').innerHTML= ans
+
+        }
+    </script>
+</head>
+
+<body>
+    NO : <input type="text" name="" id="n1">
+    NO : <input type="text" name="" id="n2">
+    <input type="button" value="sum" id="sum" onclick="dosum()">
+    <p id="res">sum is </p>
+</body>
+
+</html>
